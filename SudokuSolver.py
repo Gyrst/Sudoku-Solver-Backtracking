@@ -27,9 +27,22 @@ def get_submatrix(pos):
 
 def check_submatrix(pos):
     submatrix = get_submatrix(pos)
-    unique_values = np.unique(submatrix[0])
-    unique_values.size
-    return
+    if np.any(submatrix == 0):
+        return True
+    else:
+        unique_values = np.unique(submatrix[0])
+        if unique_values.size == 9:
+            return True
+        else: 
+            return False
+
+def check_row(pos):
+    pass
+
+def check_col(pos):
+    pass
+
+def assign_value(pos):
+    pass
 
 print(check_submatrix(position))
-
