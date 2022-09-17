@@ -78,10 +78,23 @@ def assign_value(matrix, pos):
         raise Exception(ValueError)
 
 
+def is_complete(matrix):
+    if np.any(matrix==0):
+        return False
+    else:
+        return True    
+
 # Look at the pseudo-code to implement
+# 1) The way it currently reads the rows is off - is doesn't go down to the number level but only row level...
+# 2) Position should not be taken as an input value, but shall be identified within the functions in order to make checks
+# 3) Needs Method to verify that it is done (All values assigned)
+# 4) Look further into the format of Matrix np --> to see how to best read and iterate over it.
+
 
 def backtracking(matrix, pos):
-     for row in matrix:
+    if is_complete(matrix):
+        return True
+    for row in matrix:
          for value in row:
             print(value)
             if position==0:
@@ -93,4 +106,3 @@ def backtracking(matrix, pos):
 
 
 backtracking(matrix, position)
-
